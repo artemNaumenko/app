@@ -13,7 +13,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: "Prepare snapshots"
-          "command": "jest --updateSnapshot"
+          command: "jest --updateSnapshot"
       - run:
           name: "Run test"
           command: "npm test"
