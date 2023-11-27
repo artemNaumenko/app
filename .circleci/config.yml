@@ -12,8 +12,12 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
+          name: "Prepare snapshots"
+          "command": "jest --updateSnapshot"
+      - run:
           name: "Run test"
           command: "npm test"
+    timeout: 5m
 
 workflows:
   build-test-workflow:
