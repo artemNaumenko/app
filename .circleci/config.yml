@@ -6,9 +6,11 @@ orbs:
 jobs:
   build-test:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:16.10
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           name: "Run test"
           command: "npm test"
