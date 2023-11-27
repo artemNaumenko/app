@@ -12,6 +12,9 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
+          name: install dependencies
+          command: npm install
+      - run:
           name: "Prepare snapshots"
           command: "jest --updateSnapshot"
       - run:
