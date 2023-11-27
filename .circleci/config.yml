@@ -14,12 +14,9 @@ jobs:
       - run:
           name: install dependencies
           command: npm install
-#      - run:
-#          name: "Prepare snapshots"
-#          command: "jest --updateSnapshot"
       - run:
           name: "Run test"
-          command: "npm test"
+          command: "npm test --updateSnapshot"
           no_output_timeout: 5m
 
 workflows:
