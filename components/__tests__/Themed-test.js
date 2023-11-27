@@ -17,7 +17,7 @@ test(`Text useThemeColor case1`, () => {
 
     const color = useThemeColor({ light: lightColor}, 'background');
 
-    assert(color != lightColor);
+    assert(color === lightColor);
 });
 
 test(`Text useThemeColor case2`, () => {
