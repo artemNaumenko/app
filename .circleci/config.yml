@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-test:
     docker:
-      - image: cimg/node:16.10
+      - image: cimg/node:18.15.0
     steps:
       - checkout
       - node/install-packages:
@@ -14,9 +14,9 @@ jobs:
       - run:
           name: install dependencies
           command: npm install
-      - run:
-          name: "Prepare snapshots"
-          command: "jest --updateSnapshot"
+#      - run:
+#          name: "Prepare snapshots"
+#          command: "jest --updateSnapshot"
       - run:
           name: "Run test"
           command: "npm test"
