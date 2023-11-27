@@ -16,7 +16,7 @@ jobs:
           command: npm install
       - run:
           name: "Run test"
-          command: "npm test --updateSnapshot"
+          command: "npm run build-test"
           no_output_timeout: 5m
 
 workflows:
