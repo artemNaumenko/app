@@ -1,6 +1,7 @@
 import * as React from 'react';
 import assert from "assert";
 import {filterContactsCondition} from "../filterContactsCondition";
+import getUsers from "../resources/users";
 
 test('filtering contacts condition working correctly. case 1', () => {
   //given
@@ -133,3 +134,17 @@ test('filtering contacts condition working correctly. case 6', () => {
   //then
   assert(result === false)
 });
+
+test('performance test', () => {
+  const users = getUsers()
+
+  const start = new Date().getTime()
+
+  users.forEach((user, index) => {
+    const target = users.filter(contact => filterContactsCondition(contact, user.phoneNumbers[0].number))
+  })
+
+  const end = new Date().getTime()
+
+  console.log(end - start)
+})
